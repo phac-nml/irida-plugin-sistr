@@ -10,7 +10,7 @@ New to version 1.1.1 incorporates
 * More detailed reports for MASH, cgMLST and BLAST profiles
 
 # Building plugin
-Compiled plugin version is available in `jar` folder, but you can build your own copy. Building and packaging this code is accomplished using [Apache Maven](http://maven.apache.org/download.cgi). However, you will first need to install [IRIDA](https://github.com/phac-nml/irida) to your local Maven repository. The version of IRIDA you install will have to correspond to the version found in the `irida.version.compiletime` property in the [pom.xml](https://github.com/phac-nml/irida-plugin-ectyper/blob/master/pom.xml) file of this project. To build successfully plugin there is a need to compile IRIDA corresponding to the version specified in `pom.xml`. 
+Compiled plugin version is available in `jar` folder, but you can build your own copy. Building and packaging this code is accomplished using [Apache Maven](http://maven.apache.org/download.cgi). However, you will first need to install [IRIDA](https://github.com/phac-nml/irida) to your local Maven repository. The version of IRIDA you install will have to correspond to the version found in the `irida.version.compiletime` property in the `pom.xml` file of this project. To build successfully plugin there is a need to compile IRIDA corresponding to the version specified in `pom.xml`. 
 Here is a brief workflow to compile new `*.jar` file from the source code 
 
 ```bash
@@ -95,7 +95,7 @@ After successful installation, plugin should appear in the list of available pip
 
 ### Testing
 Folder `sampledata` has
-* stripped versions of the `Salmonella Newport` raw reads from `SRR12168692` accession. These files could be used to test plugin in your IRIDA instance
+* stripped versions of the `Salmonella Newport` raw reads from `[SRR12168692](https://www.ncbi.nlm.nih.gov/sra/SRR12168692)` accession. These files could be used to test plugin in your IRIDA instance
 * `SISTR_results.json` example results file output by the tool 
 
 
