@@ -28,12 +28,12 @@ mvn package -DskipTests  #find your package in /target
 Below you will find more detailed explanations of each step above.
 
 # Install
-As most IRIDA plugings, this plugin is readily installable by the placement of the `*.jar` file (from the Releases section of this repo) in `/etc/irida/plugins` directory. After IRIDA server restart, the new pipeline should appear in the list of pipelines. 
+As most IRIDA plugins, this plugin is readily installable by the placement of the `*.jar` file (from the Releases section of this repo) in `/etc/irida/plugins` directory. After IRIDA server restart, the new pipeline should appear in the list of pipelines. 
 
 
 # Dependencies
 
-The following dependencies are required in order to make use of this plugin.
+The following dependencies are required to make and run this plugin.
 
 * IRIDA >= 19.01.3
 * Java >= 1.8 and Maven >= 3.3.9 (to build IRIDA dependencies)
@@ -85,12 +85,12 @@ The plugin allows for automatic IRIDA project metadata population and automatic 
 <p align="center">
   <img src="./pics/LineListMeta.png">
 </p>
-<p align="center" style="font-style:bold;font-size: 20px">Figure 2: Key meta data fields populated after serotyping run</p>
+<p align="center" style="font-style:bold;font-size: 20px">Figure 2: Key metadata fields populated after serotyping run</p>
 <p align="center"></p>
 
 
 ### Troubleshooting
-After successfull installation, plugin should appear in list of available pipilines. If not, check web-server log files for errors (e.g. Tomcat 7 logs `/var/log/tomcat7/catalina.out`)
+After successful installation, plugin should appear in the list of available pipelines. If not, check web-server log files for errors (e.g. Tomcat 7 logs `/var/log/tomcat7/catalina.out`)
 
 
 ### Testing
