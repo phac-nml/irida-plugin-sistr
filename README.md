@@ -28,7 +28,7 @@ mvn package -DskipTests  #find your package in /target
 Below you will find more detailed explanations of each step above.
 
 # Install
-As most IRIDA plugins, this plugin is readily installable by the placement of the `*.jar` file (from the Releases section of this repo) in `/etc/irida/plugins` directory. After IRIDA server restart, the new pipeline should appear in the list of pipelines. 
+As most IRIDA plugins, this plugin is readily installable by the placement of the `*.jar` file ([sistr-plugin-1.1.1.jar](/jar/sistr-plugin-1.1.1.jar)) in `/etc/irida/plugins` directory. After IRIDA server restart, the new pipeline should appear in the list of pipelines. 
 
 
 # Dependencies
@@ -95,7 +95,7 @@ After successful installation, plugin should appear in the list of available pip
 
 ### Testing
 Folder `sampledata` has
-* stripped versions of the `Salmonella Newport` raw reads from `[SRR12168692](https://www.ncbi.nlm.nih.gov/sra/SRR12168692)` accession. These files could be used to test plugin in your IRIDA instance
+* stripped versions of the `Salmonella Newport` raw reads from [SRR12168692](https://www.ncbi.nlm.nih.gov/sra/SRR12168692) accession. These files could be used to test plugin in your IRIDA instance
 * `SISTR_results.json` example results file output by the tool 
 
 
