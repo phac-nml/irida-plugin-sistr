@@ -40,13 +40,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 /**
- * {@link AnalysisSampleUpdater} for ECTYPER results to be written to
+ * {@link AnalysisSampleUpdater} for SISTR results to be written to
  * metadata of {@link Sample}s.
  */
+
+
 public class SISTRSampleUpdater implements AnalysisSampleUpdater {
 	private static final Logger logger = LoggerFactory.getLogger(SISTRSampleUpdater.class);
 	
-	private static final String SISTR_FILE = "sistr-predictions.json"; /*got to match the value in the irida_workflow.xml file <output name="serotyping report" fileName="report_ectyper.tsv"/>*/
+	private static final String SISTR_FILE = "sistr-prediction"; /*got to match the value in the irida_workflow.xml file <output name="serotyping report" fileName="report_ectyper.tsv"/>*/
 	
 
 	private MetadataTemplateService metadataTemplateService;
@@ -60,14 +62,14 @@ public class SISTRSampleUpdater implements AnalysisSampleUpdater {
 		.put("serovar_cgmlst", "SISTR serovar (cgMLST)")
 		.put("mash_serovar", "SISTR serovar (MASH)")
 		.put("serogroup", "SISTR Serogroup")
-		.put("cgmlst_subspecies", "SISTR cgMLST Subspecies")
 		.put("mash_subspecies", "SISTR MASH Subspecies")
-		.put("cgmlst_ST", "SISTR cgMLST Sequence Type")
 		.put("o_antigen", "SISTR O-antigen")
 		.put("h1", "SISTR H1")
 		.put("h2", "SISTR H2")
+		.put("cgmlst_subspecies", "SISTR cgMLST Subspecies")
+		.put("cgmlst_ST", "SISTR cgMLST Sequence Type")
 		.put("cgmlst_matching_alleles", "SISTR cgMLST Alleles Matching")
-		.put("cgmlst_found_loci", "SISTR cgMLST Found Loci")
+		.put("cgmlst_found_loci", "SISTR cgMLST Found Alleles")
 		.put("cgmlst_genome_match","SISTR Genome Match (cgMLSR)")
 		.put("mash_genome","SISTR Genome Match (MASH)")
 		.put("mash_distance", "SISTR Genome Match Distance (MASH)")
@@ -103,7 +105,9 @@ public class SISTRSampleUpdater implements AnalysisSampleUpdater {
 		}
 
 		final Sample sample = samples.iterator().next();
-
+		System.out.println(analysis.getAnalysis().getAnalysisOutputFiles().toString());
+		System.out.println(analysis.getAnalysis().getAnalysisOutputFileNames().toString());
+		System.out.println(SISTR_FILE);
 		AnalysisOutputFile sistrFile = analysis.getAnalysis().getAnalysisOutputFile(SISTR_FILE);
 		Path filePath = sistrFile.getFile();
 
@@ -132,7 +136,8 @@ public class SISTRSampleUpdater implements AnalysisSampleUpdater {
 					if (result.containsKey(e.getKey())) {
 						Object valueObject = result.get(e.getKey());
 						String value = (valueObject != null ? valueObject.toString() : "");
-						PipelineProvidedMetadataEntry metadataEntry = new PipelineProvidedMetadataEntry(value, "text", analysis);
+						PipelineProvidedMetadataEntry metadataEntry =
+								new PipelineProvidedMetadataEntry(value, "text", analysis);
 						stringEntries.put(e.getValue() + " (v"+workflowVersion+")", metadataEntry);
 					}
 				});

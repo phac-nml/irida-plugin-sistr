@@ -75,7 +75,7 @@
     <output name="shovill-std.log" fileName="shovill-std.log"/>
     <output name="shovill-contigs.fasta" fileName="shovill-contigs.fasta"/>
     <output name="sistr-novel-alleles.fasta" fileName="sistr-novel-alleles.fasta"/>
-    <output name="sistr-predictions.json" fileName="sistr-predictions.json"/>
+    <output name="sistr-predictions" fileName="sistr-predictions.json"/>
     <output name="sistr-cgmlst-profiles.csv" fileName="sistr-cgmlst-profiles.csv"/>
     <output name="sistr-alleles-out.json" fileName="sistr-alleles-out.json"/>
   </outputs>

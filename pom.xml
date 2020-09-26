@@ -19,13 +19,15 @@
 		<plugin.requires.runtime>1.0.0</plugin.requires.runtime>
 
 		<!-- The version of IRIDA your plugin must be compiled against. -->
-		<irida.version.compiletime>19.01.3</irida.version.compiletime>
+		<irida.version.compiletime>20.09</irida.version.compiletime>
 		
 		<!-- Version of the pf4j dependency -->
 		<pf4j.version>2.4.0</pf4j.version>
 
 		<!-- Version of Java to target for this plugin -->
 		<java.version>1.8</java.version>
+		<jackson.version>2.9.10</jackson.version>
+		<jackson.dataformat.yaml.version>2.7.4</jackson.dataformat.yaml.version>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -45,6 +47,26 @@
 			<artifactId>pf4j</artifactId>
 			<version>${pf4j.version}</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>28.0-jre</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-yaml</artifactId>
+			<version>${jackson.dataformat.yaml.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.1.0.Final</version>
 		</dependency>
 	</dependencies>
 

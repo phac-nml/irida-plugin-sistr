@@ -18,6 +18,7 @@ import ca.corefacility.bioinformatics.irida.service.sample.SampleService;
 import ca.corefacility.bioinformatics.irida.service.workflow.IridaWorkflowsService;
 
 
+
 public class SISTRplugin extends Plugin {
 
 	public static AnalysisType SISTR_TYPING_PLUGIN = new AnalysisType("SISTR_TYPING_PLUGIN");
@@ -46,6 +47,11 @@ public class SISTRplugin extends Plugin {
 		}
 
 		@Override
+		public Optional<String> getAnalysisViewer() {
+			return Optional.of("sistr");
+		}
+
+		@Override
 		public UUID getDefaultWorkflowUUID() {
 			return UUID.fromString("b21ea62c-7916-4ca6-96ba-90c20177b70f");
 		}
@@ -54,5 +60,7 @@ public class SISTRplugin extends Plugin {
 		public Optional<Color> getBackgroundColor() {
 			return Optional.of(Color.decode("#ff6666"));
 		}
+
+
 	}
 }
