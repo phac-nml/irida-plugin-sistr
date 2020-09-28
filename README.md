@@ -8,6 +8,7 @@ New to version 1.1.1 incorporates
 
 * Updated typing databases
 * More detailed reports for MASH, cgMLST and BLAST profiles
+* Reporting of serotyping results via a pretty  web-page (requires `IRIDA >= 20.09`)
 
 # Building plugin
 Compiled plugin version is available in [`*.jar` folder](/jar/), but you can build your own copy. Building and packaging this code is accomplished using [Apache Maven](http://maven.apache.org/download.cgi). However, you will first need to install [IRIDA](https://github.com/phac-nml/irida) to your local Maven repository. The version of IRIDA you install will have to correspond to the version found in the `irida.version.compiletime` property in the `pom.xml` file of this project. To build successfully plugin there is a need to compile IRIDA corresponding to the version specified in `pom.xml`. 
@@ -16,7 +17,7 @@ Here is a brief workflow to compile new `*.jar` file from the source code
 ```bash
 # Build IRIDA dependencies
 git clone https://github.com/phac-nml/irida.git
-git checkout 19.01.3
+git checkout 20.09
 #IRIDA dependencies will be located in ~/.m2
 mvn install -DskipTests 
 git clone https://github.com/phac-nml/irida-plugin-sistr.git
@@ -35,7 +36,7 @@ As most IRIDA plugins, this plugin is readily installable by the placement of th
 
 The following dependencies are required to make and run this plugin.
 
-* IRIDA >= 19.01.3
+* IRIDA >= 19.01.3 (web-page results rendering feature requires >= 20.09)
 * Java >= 1.8 and Maven >= 3.3.9 (to build IRIDA dependencies)
 * Galaxy >= 16.01
 * Shovill == 1.1.0
@@ -87,6 +88,13 @@ The plugin allows for automatic IRIDA project metadata population and automatic 
 </p>
 <p align="center" style="font-style:bold;font-size: 20px">Figure 2: Key metadata fields populated after serotyping run</p>
 <p align="center"></p>
+
+<p align="center">
+  <img src="./pics/SISTRViewer.png">
+</p>
+<p align="center" style="font-style:bold;font-size: 20px">Figure 3: Serotyping results rendered by `SISTR Viewer` into a pretty web-page</p>
+<p align="center"></p>
+
 
 
 ### Troubleshooting

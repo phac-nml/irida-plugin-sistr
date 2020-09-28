@@ -48,7 +48,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 public class SISTRSampleUpdater implements AnalysisSampleUpdater {
 	private static final Logger logger = LoggerFactory.getLogger(SISTRSampleUpdater.class);
 	
-	private static final String SISTR_FILE = "sistr-prediction"; /*got to match the value in the irida_workflow.xml file <output name="serotyping report" fileName="report_ectyper.tsv"/>*/
+	private static final String SISTR_FILE = "sistr-predictions"; /*got to match the value in the irida_workflow.xml file <output name="serotyping report" fileName="report_ectyper.tsv"/>*/
 	
 
 	private MetadataTemplateService metadataTemplateService;
@@ -105,9 +105,6 @@ public class SISTRSampleUpdater implements AnalysisSampleUpdater {
 		}
 
 		final Sample sample = samples.iterator().next();
-		System.out.println(analysis.getAnalysis().getAnalysisOutputFiles().toString());
-		System.out.println(analysis.getAnalysis().getAnalysisOutputFileNames().toString());
-		System.out.println(SISTR_FILE);
 		AnalysisOutputFile sistrFile = analysis.getAnalysis().getAnalysisOutputFile(SISTR_FILE);
 		Path filePath = sistrFile.getFile();
 
