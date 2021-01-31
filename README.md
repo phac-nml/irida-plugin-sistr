@@ -1,8 +1,6 @@
 # IRIDA SISTR Plugin for Salmonella serotyping
 This new IRIDA plugin allows deployment of SISTR, a tool for in silico Salmonella serotyping, in IRIDA platform. For faster and independent updates, SISTR built-in workflow were decided to be ported to plugin format. Plugin version has a limitation using the most current IRIDA version `20.05.2`- inability to generate analysis report page. Future releases of IRIDA should bring this feature to plugins. In future SISTR releases we plan to generate reports in `csv` and `pdf` formats allowing for easy download after completion of the analysis run.
 
-
-
 # Features
 New to version 1.1.1 incorporates
 

@@ -111,7 +111,7 @@ public class SISTRSampleUpdater implements AnalysisSampleUpdater {
 		
 
 		/*Read through SISTR_FILE json and update meta data fields*/
-		Map<String, MetadataEntry> stringEntries = new HashMap<>();
+		Map<String, MetadataEntry> metadataEntries = new HashMap<>();
 		try {
 
 			IridaWorkflow iridaWorkflow = iridaWorkflowsService.getIridaWorkflow(analysis.getWorkflowId());
@@ -133,19 +133,17 @@ public class SISTRSampleUpdater implements AnalysisSampleUpdater {
 					if (result.containsKey(e.getKey())) {
 						Object valueObject = result.get(e.getKey());
 						String value = (valueObject != null ? valueObject.toString() : "");
-						PipelineProvidedMetadataEntry metadataEntry =
-								new PipelineProvidedMetadataEntry(value, "text", analysis);
-						stringEntries.put(e.getValue() + " (v"+workflowVersion+")", metadataEntry);
+						PipelineProvidedMetadataEntry metadataEntry = new PipelineProvidedMetadataEntry(value, "text", analysis);
+						metadataEntries.put(e.getValue() + " (v"+workflowVersion+")", metadataEntry);
 					}
 				});
 
-				// convert string map into metadata fields
-				Map<MetadataTemplateField, MetadataEntry> metadataMap = metadataTemplateService.getMetadataMap(stringEntries);
+				//convert the string/entry Map to a Set of MetadataEntry.  This has the same function as the old metadataTemplateService.getMetadataMap
+				Set<MetadataEntry> metadataSet = metadataTemplateService.convertMetadataStringsToSet(metadataEntries);
 
 				//save metadata back to sample
 				samples.forEach(s -> {
-					s.mergeMetadata(metadataMap);
-					sampleService.updateFields(s.getId(), ImmutableMap.of("metadata", s.getMetadata()));
+					sampleService.mergeSampleMetadata(sample,metadataSet);
 				});
 
 			} else {

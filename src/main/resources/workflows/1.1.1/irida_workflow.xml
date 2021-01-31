@@ -2,7 +2,7 @@
 <iridaWorkflow>
   <id>b21ea62c-7916-4ca6-96ba-90c20177b70f</id>
   <name>SISTR</name>
-  <version>1.1.1</version>
+  <version>1.1.1b</version>
   <analysisType>SISTR_TYPING_PLUGIN</analysisType>
   <inputs>
     <sequenceReadsPaired>sequence_reads_paired</sequenceReadsPaired>
