@@ -1,21 +1,25 @@
 # IRIDA SISTR Plugin for Salmonella serotyping
-This new IRIDA plugin allows deployment of SISTR, a tool for in silico Salmonella serotyping, in IRIDA platform. For faster and independent updates, SISTR built-in workflow were decided to be ported to plugin format. Plugin version has a limitation using the most current IRIDA version `20.05.2`- inability to generate analysis report page. Future releases of IRIDA should bring this feature to plugins. In future SISTR releases we plan to generate reports in `csv` and `pdf` formats allowing for easy download after completion of the analysis run.
-
+This new IRIDA plugin allows deployment of SISTR, a tool for *in silico Salmonella* serotyping, in IRIDA platform. For faster and independent updates, SISTR built-in workflow were decided to be ported to plugin format. 
+The analysis report page feature is only available since IRIDA version `20.09`.
+In future SISTR releases we plan to generate reports also in `csv` and `pdf` formats.
 # Features
-New to version 1.1.1 incorporates
+New to versions `1.1.1` and `1.1.1b`
 
-* Updated typing databases
-* More detailed reports for MASH, cgMLST and BLAST profiles
+* Updated typing databases powered by `SISTR v1.1.1`
 * Reporting of serotyping results via a pretty  web-page (requires `IRIDA >= 20.09`)
+    * More detailed analysis reports for MASH, cgMLST and BLAST profiles
+    * Final results Quality Control checks
+* Plugin versions `1.1.1` and `1.1.1b` are similar with the later supporting `IRIDA v21.01` new metadata update features
 
 # Building plugin
 Compiled plugin version is available in [`*.jar` folder](/jar/), but you can build your own copy. Building and packaging this code is accomplished using [Apache Maven](http://maven.apache.org/download.cgi). However, you will first need to install [IRIDA](https://github.com/phac-nml/irida) to your local Maven repository. The version of IRIDA you install will have to correspond to the version found in the `irida.version.compiletime` property in the `pom.xml` file of this project. To build successfully plugin there is a need to compile IRIDA corresponding to the version specified in `pom.xml`. 
 Here is a brief workflow to compile new `*.jar` file from the source code 
 
 ```bash
+IRIDA_VERSION=20.09
 # Build IRIDA dependencies
 git clone https://github.com/phac-nml/irida.git
-git checkout 20.09
+git checkout ${IRIDA_VERSION}
 #IRIDA dependencies will be located in ~/.m2
 mvn install -DskipTests 
 git clone https://github.com/phac-nml/irida-plugin-sistr.git
@@ -34,7 +38,7 @@ As most IRIDA plugins, this plugin is readily installable by the placement of th
 
 The following dependencies are required to make and run this plugin.
 
-* IRIDA >= 19.01.3 (web-page results rendering feature requires >= 20.09)
+* IRIDA >= 19.01.3 (analysis report rendering feature requires >= 20.09)
 * Java >= 1.8 and Maven >= 3.3.9 (to build IRIDA dependencies)
 * Galaxy >= 16.01
 * Shovill == 1.1.0
