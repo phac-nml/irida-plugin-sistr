@@ -2,8 +2,6 @@
 This new IRIDA plugin allows deployment of SISTR, a tool for *in silico Salmonella* serotyping, in IRIDA platform. For faster and independent updates, SISTR built-in workflow were decided to be ported to plugin format. 
 
 # Features
-New to versions `1.1.1` and `1.1.1b`
-
 * Uses the newest features of the SISTR v1.1.3 including updated nomenclature for O24 and O25 antigens
 * Check if SISTR predicted serovar is in the version 5 list of reportable serovars (https://github.com/phac-nml/sistr_cmd/blob/v1.1.3/sistr/data/serovar-list.txt)
 
@@ -71,11 +69,11 @@ A couple of illustrations demonstrating plugin in action.
 	* `mash_distance`
 	* `qc_messages`
 	* `predicted_serovar_in_list`
-* update to the newest `shovill` version `1.1.0` with more relaxed assembly setting with minimum contig length of 1bp
+* update to the newest `shovill` version `1.1.0` with more relaxed assembly setting with minimum contig length of 1 bp
 
 
 ### Automatic metadata population
-The plugin allows for automatic IRIDA project metadata population and automatic triggering upon sequencing data upload. These features need to be updated in the IRIDA project configuration page.
+The plugin allows for automatic IRIDA project metadata population and automatic triggering upon sequencing data upload. These features need to be updated in the IRIDA project configuration page. Make sure to select on `Save the SISTR generated data (serovar, antigens, etc.) to the project metadata (i.e. Line List tab)? (recommended)` on the parameters screen when launching the pipeline.
 
 <p align="center">
   <img src="./pics/PipelineTile.png">
