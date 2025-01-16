@@ -53,7 +53,7 @@ public class SISTRplugin extends Plugin {
 
 		@Override
 		public UUID getDefaultWorkflowUUID() {
-			return UUID.fromString("6e5a983d-0259-4e10-b721-88aaf1867ec8");
+			return UUID.fromString("6e5a983d-0259-4e10-b721-88aaf1867ec9");
 		}
 
 		@Override
