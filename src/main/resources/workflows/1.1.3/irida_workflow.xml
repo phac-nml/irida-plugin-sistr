@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <iridaWorkflow>
-  <id>b21ea62c-7916-4ca6-96ba-90c20177b70f</id>
+  <id>6e5a983d-0259-4e10-b721-88aaf1867ec9</id>
   <name>SISTR</name>
-  <version>1.1.1b</version>
+  <version>1.1.3</version>
   <analysisType>SISTR_TYPING_PLUGIN</analysisType>
   <inputs>
     <sequenceReadsPaired>sequence_reads_paired</sequenceReadsPaired>
@@ -18,17 +18,11 @@
     <parameter name="shovill-1-adv.mincov" defaultValue="1">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.1.0+galaxy0" parameterName="adv.mincov"/>
     </parameter>
-    <parameter name="shovill-1-trim" defaultValue="false">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.1.0+galaxy0" parameterName="trim"/>
-    </parameter>
     <parameter name="shovill-1-adv.namefmt" defaultValue="contig%05d">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.1.0+galaxy0" parameterName="adv.namefmt"/>
     </parameter>
     <parameter name="shovill-1-adv.depth" defaultValue="100">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.1.0+galaxy0" parameterName="adv.depth"/>
-    </parameter>
-    <parameter name="shovill-1-log" defaultValue="true">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.1.0+galaxy0" parameterName="log"/>
     </parameter>
     <parameter name="shovill-1-adv.gsize" defaultValue="">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.1.0+galaxy0" parameterName="adv.gsize"/>
@@ -46,45 +40,48 @@
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.1.0+galaxy0" parameterName="assembler"/>
     </parameter>
     <parameter name="sistr_cmd-2-keep_tmp" defaultValue="false">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/sistr_cmd/sistr_cmd/1.1.1" parameterName="keep_tmp"/>
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/sistr_cmd/sistr_cmd/1.1.3+galaxy0" parameterName="keep_tmp"/>
     </parameter>
     <parameter name="sistr_cmd-2-output_format" defaultValue="json">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/sistr_cmd/sistr_cmd/1.1.1" parameterName="output_format"/>
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/sistr_cmd/sistr_cmd/1.1.3+galaxy0" parameterName="output_format"/>
     </parameter>
     <parameter name="sistr_cmd-2-run_mash" defaultValue="true">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/sistr_cmd/sistr_cmd/1.1.1" parameterName="run_mash"/>
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/sistr_cmd/sistr_cmd/1.1.3+galaxy0" parameterName="run_mash"/>
+    </parameter>
+    <parameter name="sistr_cmd-2-serovar_list.selection_mode" defaultValue="default">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/sistr_cmd/sistr_cmd/1.1.3+galaxy0" parameterName="serovar_list.selection_mode"/>
     </parameter>
     <parameter name="sistr_cmd-2-more_output" defaultValue="-M">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/sistr_cmd/sistr_cmd/1.1.1" parameterName="more_output"/>
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/sistr_cmd/sistr_cmd/1.1.3+galaxy0" parameterName="more_output"/>
     </parameter>
     <parameter name="sistr_cmd-2-verbosity" defaultValue="-vv">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/sistr_cmd/sistr_cmd/1.1.1" parameterName="verbosity"/>
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/sistr_cmd/sistr_cmd/1.1.3+galaxy0" parameterName="verbosity"/>
     </parameter>
     <parameter name="sistr_cmd-2-use_full_cgmlst_db" defaultValue="true">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/sistr_cmd/sistr_cmd/1.1.1" parameterName="use_full_cgmlst_db"/>
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/sistr_cmd/sistr_cmd/1.1.3+galaxy0" parameterName="use_full_cgmlst_db"/>
     </parameter>
     <parameter name="sistr_cmd-2-qc" defaultValue="true">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/sistr_cmd/sistr_cmd/1.1.1" parameterName="qc"/>
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/sistr_cmd/sistr_cmd/1.1.3+galaxy0" parameterName="qc"/>
     </parameter>
     <parameter name="sistr_cmd-2-no_cgmlst" defaultValue="false">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/sistr_cmd/sistr_cmd/1.1.1" parameterName="no_cgmlst"/>
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/sistr_cmd/sistr_cmd/1.1.3+galaxy0" parameterName="no_cgmlst"/>
     </parameter>
   </parameters>
   <outputs>
+    <output name="shovill-contigs.fasta" fileName="shovill-contigs.fasta"/>
     <output name="shovill-contigs.gfa" fileName="shovill-contigs.gfa"/>
     <output name="shovill-std.log" fileName="shovill-std.log"/>
-    <output name="shovill-contigs.fasta" fileName="shovill-contigs.fasta"/>
+    <output name="sistr-alleles-out.json" fileName="sistr-alleles-out.json"/>
+    <output name="sistr-cgmlst-profiles.csv" fileName="sistr-cgmlst-profiles.csv"/>
     <output name="sistr-novel-alleles.fasta" fileName="sistr-novel-alleles.fasta"/>
     <output name="sistr-predictions" fileName="sistr-predictions.json"/>
-    <output name="sistr-cgmlst-profiles.csv" fileName="sistr-cgmlst-profiles.csv"/>
-    <output name="sistr-alleles-out.json" fileName="sistr-alleles-out.json"/>
   </outputs>
   <toolRepositories>
     <repository>
       <name>sistr_cmd</name>
       <owner>nml</owner>
       <url>https://toolshed.g2.bx.psu.edu</url>
-      <revision>17fcac7ddf54</revision>
+      <revision>cf767360ede1</revision>
     </repository>
     <repository>
       <name>shovill</name>

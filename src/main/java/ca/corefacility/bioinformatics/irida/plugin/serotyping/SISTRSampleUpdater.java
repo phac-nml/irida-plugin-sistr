@@ -75,6 +75,8 @@ public class SISTRSampleUpdater implements AnalysisSampleUpdater {
 		.put("mash_distance", "SISTR Genome Match Distance (MASH)")
 		.put("qc_status", "SISTR QC Status")
 		.put("qc_messages", "SISTR QC message(s)")
+		.put("predicted_serovar_in_list", "SISTR reportable serovar?")
+		.put("antigenic_formula", "SISTR antigenic formula")
 		.build();
 			// @formatter:on
 
