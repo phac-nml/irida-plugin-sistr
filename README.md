@@ -78,18 +78,20 @@ The plugin allows for automatic IRIDA project metadata population and automatic 
 <p align="center">
   <img src="./pics/PipelineTile.png">
 </p>
-<p align="center" style="font-style:bold;font-size: 20px">Figure 1: Pipeline Tile</p>
+<p align="center" style="font-style:bold;font-size: 20px"><b>Figure 1:</b> Pipeline Tile</p>
 
 <p align="center">
   <img src="./pics/LineListMeta.png">
 </p>
-<p align="center" style="font-style:bold;font-size: 20px">Figure 2: Key metadata fields populated after serotyping run</p>
+<br>
+<p align="center" style="font-style:bold;font-size: 20px"><b>Figure 2:</b> Key metadata fields populated after serotyping run</p>
 <p align="center"></p>
-
+<br>
 <p align="center">
   <img src="./pics/SISTRViewer.png">
 </p>
-<p align="center" style="font-style:bold;font-size: 20px">Figure 3: Serotyping results rendered by `SISTR Viewer` into a pretty web-page</p>
+<br>
+<p align="center" style="font-style:bold;font-size: 20px"><b>Figure 3:</b> Serotyping results rendered by SISTR Viewer into a pretty web-page</p>
 <p align="center"></p>
 
 
