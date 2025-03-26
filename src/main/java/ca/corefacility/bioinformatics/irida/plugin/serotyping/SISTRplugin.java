@@ -21,7 +21,7 @@ import ca.corefacility.bioinformatics.irida.service.workflow.IridaWorkflowsServi
 
 public class SISTRplugin extends Plugin {
 
-	public static AnalysisType SISTR_TYPING_PLUGIN = new AnalysisType("SISTR_TYPING_PLUGIN");
+	public static AnalysisType SISTR_TYPING_PLUGIN = new AnalysisType("SISTR_PLUGIN");
 
 	public SISTRplugin(PluginWrapper wrapper) {
 		super(wrapper);
